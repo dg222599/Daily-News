@@ -28,6 +28,7 @@ const Header = () => {
       )
       .then((res) => {
         setNewsData(res.data.articles);
+        setSearchText("");
       })
       .catch((err) => {
         console.log(err);
@@ -65,6 +66,7 @@ const Header = () => {
                   root: classes.inputRoot,
                   input: classes.inputInput,
                 }}
+                value={searchText}
                 inputProps={{ "aria-label": "search" }}
                 onChange={(e) => {
                   setSearchText(e.target.value);
